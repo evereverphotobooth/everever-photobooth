@@ -13,44 +13,45 @@
             line-height:1.6; 
         }
 
-        /* === 固定 Header === */
+        /* === 固定 Header（加強版） === */
         header { 
-            background:#111; 
-            color:white; 
-            padding:20px 20px; 
-            position: fixed;        /* 改成 fixed */
+            background: rgba(17, 17, 17, 0.98);   /* 半透明黑色，更靚 */
+            color: white; 
+            padding: 15px 20px; 
+            position: fixed; 
             top: 0; 
             left: 0;
             width: 100%; 
-            z-index: 1000; 
+            z-index: 9999; 
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);   /* 加少少陰影，更明顯 */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
         }
+
         .logo-container {
             display: flex;
             justify-content: center;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .logo {
-            height: 80px;           /* 固定後調細少少，更舒服 */
+            height: 70px;           /* 調細少少，更適合固定 */
             width: auto;
-            max-width: 280px;
-            border-radius: 8px;
+            max-width: 260px;
         }
         .header-text h1 {
-            margin: 8px 0 5px 0;
-            font-size: 2.1em;
+            margin: 6px 0 4px 0;
+            font-size: 1.95em;
         }
         .header-text p {
             margin: 0;
-            font-size: 1.05em;
+            font-size: 1.02em;
             opacity: 0.9;
         }
 
-        /* Hero 要加 padding-top，否則會被 header 遮住 */
+        /* Hero 必須留空間，避免被 header 遮住 */
         .hero {
-            height: 85vh;
-            margin-top: 120px;           /* 重要！避免被固定 header 遮住 */
+            height: 90vh;
+            margin-top: 110px;        /* 重要！留空間畀固定 header */
             position: relative;
             overflow: hidden;
             display: flex;
@@ -60,15 +61,15 @@
             text-align: center;
         }
 
-        /* 其餘樣式保持不變 */
         .hero::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.50);
+            background: rgba(0, 0, 0, 0.48);
             z-index: 1;
         }
 
+        /* 輪播背景 */
         .hero-bg {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -99,17 +100,17 @@
             padding: 0 20px;
         }
         .hero h1 { 
-            font-size: 3.8em; 
+            font-size: 3.7em; 
             margin: 0 0 15px 0;
             text-shadow: 0 3px 12px rgba(0,0,0,0.8);
         }
         .hero p { 
-            font-size: 1.55em; 
+            font-size: 1.5em; 
             margin-bottom: 30px;
             text-shadow: 0 2px 8px rgba(0,0,0,0.7);
         }
 
-        /* 價錢計劃同其他部分 */
+        /* 其他部分 */
         .pricing { padding: 80px 20px; background: #fff; text-align: center; }
         .pricing h2 { font-size: 2.5em; margin-bottom: 50px; }
         .plans {
@@ -158,7 +159,7 @@
         }
         .portfolio img:hover { transform:scale(1.04); }
 
-        footer { background:#111; color:white; text-align:center; padding:60px 20px; }
+        footer { background:#111; color:white; text-align:center; padding:60px 20px; margin-top: 50px; }
     </style>
 </head>
 <body>
@@ -188,7 +189,7 @@
         </div>
     </div>
 
-    <!-- 價錢計劃、作品展示、聯絡等部分保持不變 -->
+    <!-- 價錢計劃部分（保持不變） -->
     <section class="pricing">
         <h2>我們的套餐計劃</h2>
         <div class="plans">
@@ -239,7 +240,7 @@
         <p style="margin-top:40px; color:#666;">* 以上為參考價錢，實際價錢視乎日期、場地及自訂要求而定。歡迎 WhatsApp 查詢最新報價。</p>
     </section>
 
-    <!-- 其餘部分（作品展示、聯絡、footer）保持不變 -->
+    <!-- 其他部分保持不變 -->
     <section id="portfolio" style="background:#111; color:white;">
         <h2>作品展示</h2>
         <div class="portfolio">
