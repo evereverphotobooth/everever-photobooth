@@ -96,7 +96,7 @@
             text-shadow: 0 2px 8px rgba(0,0,0,0.7);
         }
 
-        /* ==================== 新增功能介紹層 ==================== */
+        /* ==================== Photo Booth 功能介紹 ==================== */
         .features {
             padding: 80px 20px;
             background: #fff;
@@ -117,41 +117,17 @@
             text-align: center;
         }
         .feature-icon {
-            font-size: 3.5em;
-            margin-bottom: 15px;
+            font-size: 3.8em;
+            margin-bottom: 18px;
         }
         .feature-item h3 {
-            font-size: 1.35em;
+            font-size: 1.4em;
             margin: 10px 0 15px 0;
+            color: #222;
         }
         .feature-item p {
             color: #555;
-            line-height: 1.7;
-        }
-        .feature-disabled {
-            position: relative;
-        }
-        .feature-disabled::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 80px;
-            height: 3px;
-            background: #e74c3c;
-            transform: rotate(-45deg) translate(-50%, -50%);
-            opacity: 0.9;
-        }
-        .feature-disabled::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 80px;
-            height: 3px;
-            background: #e74c3c;
-            transform: rotate(45deg) translate(-50%, -50%);
-            opacity: 0.9;
+            line-height: 1.75;
         }
 
         /* 其他部分 */
@@ -233,7 +209,7 @@
         </div>
     </div>
 
-    <!-- ==================== 新增功能介紹層 ==================== -->
+    <!-- Photo Booth 功能介紹（只顯示你想出現嘅功能） -->
     <section class="features">
         <h2>我們的 Photo Booth 功能</h2>
         <div class="feature-grid">
@@ -256,35 +232,16 @@
                 <p>我們提供各式道具供貴客使用，亦可根據客戶需求度身訂製道具，讓每張照片充滿趣味和獨特風采。</p>
             </div>
 
-            <!-- 以下為已劃線功能 -->
-            <div class="feature-item feature-disabled">
-                <div class="feature-icon">📱</div>
-                <h3>即時網上相簿</h3>
-                <p>所有相片都會即時上傳到我們的網上相簿，與所有賓客一同分享喜悅。</p>
-            </div>
-
             <div class="feature-item">
                 <div class="feature-icon">📱</div>
                 <h3>即時 QR Code 收相</h3>
                 <p>我們的 Photobooth 能即時以 QR Code 收相，讓貴客能立即收取相片，並隨時在社交媒體分享美好時刻。</p>
             </div>
 
-            <div class="feature-item feature-disabled">
-                <div class="feature-icon">📽️</div>
-                <h3>動態 Slideshow</h3>
-                <p>我們能於你的活動會場內以動態 Slideshow 形式展示所有已拍攝的相片，與現場參加者分享當刻的快樂。</p>
-            </div>
-
             <div class="feature-item">
                 <div class="feature-icon">🎨</div>
                 <h3>客製化服務</h3>
                 <p>我們能根據客戶需求，量身訂造相紙模板、機身包裝甚至是使用介面，確保每個活動都展現獨特的風格和形象。</p>
-            </div>
-
-            <div class="feature-item feature-disabled">
-                <div class="feature-icon">✏️</div>
-                <h3>專業設計</h3>
-                <p>所有設計均由我們的專業設計師負責，確保獨一無二且合適每個活動。</p>
             </div>
 
             <div class="feature-item">
@@ -296,11 +253,10 @@
         </div>
     </section>
 
-    <!-- 價錢計劃部分（保持不變） -->
+    <!-- 價錢計劃 -->
     <section class="pricing">
         <h2>我們的套餐計劃</h2>
         <div class="plans">
-            <!-- 你的 3 個套餐保持不變 -->
             <div class="plan-card">
                 <h3>基本拍攝套餐</h3>
                 <div class="price">$2,980</div>
@@ -348,7 +304,6 @@
         <p style="margin-top:40px; color:#666;">* 以上為參考價錢，實際價錢視乎日期、場地及自訂要求而定。歡迎 WhatsApp 查詢最新報價。</p>
     </section>
 
-    <!-- 作品展示、聯絡、footer 保持不變 -->
     <section id="portfolio" style="background:#111; color:white;">
         <h2>作品展示</h2>
         <div class="portfolio">
