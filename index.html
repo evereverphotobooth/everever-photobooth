@@ -13,44 +13,38 @@
             line-height:1.6; 
         }
 
-        /* === 加強固定 Header === */
+        /* Header 改回正常（唔固定） */
         header { 
-            background: rgba(17, 17, 17, 0.98); 
-            color: white; 
-            padding: 15px 20px; 
-            position: fixed; 
-            top: 0; 
-            left: 0;
-            width: 100%; 
-            z-index: 9999; 
+            background:#111; 
+            color:white; 
+            padding:25px 20px; 
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+            position: relative;   /* 改回 relative */
+            z-index: 10;
         }
 
         .logo-container {
             display: flex;
             justify-content: center;
-            margin-bottom: 6px;
+            margin-bottom: 10px;
         }
         .logo {
-            height: 68px;
+            height: 85px;
             width: auto;
-            max-width: 260px;
+            max-width: 300px;
         }
         .header-text h1 {
-            margin: 5px 0 3px 0;
-            font-size: 1.95em;
+            margin: 10px 0 5px 0;
+            font-size: 2.2em;
         }
         .header-text p {
             margin: 0;
-            font-size: 1.02em;
+            font-size: 1.1em;
             opacity: 0.9;
         }
 
-        /* Hero 要留足夠空間 */
         .hero {
-            height: 92vh;
-            margin-top: 105px;        /* 重要：留空間畀固定 header */
+            height: 85vh;
             position: relative;
             overflow: hidden;
             display: flex;
@@ -64,11 +58,11 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.48);
+            background: rgba(0, 0, 0, 0.50);
             z-index: 1;
         }
 
-        /* 輪播背景 */
+        /* 輪播背景保持不變 */
         .hero-bg {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -99,17 +93,17 @@
             padding: 0 20px;
         }
         .hero h1 { 
-            font-size: 3.7em; 
+            font-size: 3.8em; 
             margin: 0 0 15px 0;
             text-shadow: 0 3px 12px rgba(0,0,0,0.8);
         }
         .hero p { 
-            font-size: 1.5em; 
+            font-size: 1.55em; 
             margin-bottom: 30px;
             text-shadow: 0 2px 8px rgba(0,0,0,0.7);
         }
 
-        /* 其餘部分 */
+        /* 其他部分 */
         .pricing { padding: 80px 20px; background: #fff; text-align: center; }
         .pricing h2 { font-size: 2.5em; margin-bottom: 50px; }
         .plans {
@@ -188,7 +182,7 @@
         </div>
     </div>
 
-    <!-- 價錢計劃、作品、聯絡等保持不變 -->
+    <!-- 價錢計劃、作品展示等保持不變 -->
     <section class="pricing">
         <h2>我們的套餐計劃</h2>
         <div class="plans">
