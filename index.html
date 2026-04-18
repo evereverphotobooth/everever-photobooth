@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EverEver Photobooth | 香港專業攝影服務</title>
+    <title>EverEver Photbooth | 香港專業攝影服務</title>
     <style>
         body { 
             font-family: "Microsoft YaHei", Arial, sans-serif; 
@@ -70,11 +70,12 @@
             animation: fadeZoom 30s infinite ease-in-out;
         }
 
-        .hero-bg:nth-child(1) { animation-delay: 0s;    background-image: url('https://i.imgur.com/pNfG34Q.png'); }
-        .hero-bg:nth-child(2) { animation-delay: 6s;    background-image: url('https://i.imgur.com/KtKRL8S.png'); }
-        .hero-bg:nth-child(3) { animation-delay: 12s;   background-image: url('https://i.imgur.com/zdTnvEK.png'); }
-        .hero-bg:nth-child(4) { animation-delay: 18s;   background-image: url('https://i.imgur.com/DvK1TEW.png'); }
-        .hero-bg:nth-child(5) { animation-delay: 24s;   background-image: url('https://i.imgur.com/RRQe1g0.png'); }
+        /* 5 張背景（已加入你最新嘅圖） */
+        .hero-bg:nth-child(1) { animation-delay: 0s;  background-image: url('https://i.imgur.com/pNfG34Q.png'); }
+        .hero-bg:nth-child(2) { animation-delay: 6s;  background-image: url('https://i.imgur.com/KtKRL8S.png'); }
+        .hero-bg:nth-child(3) { animation-delay: 12s; background-image: url('https://i.imgur.com/zdTnvEK.png'); }
+        .hero-bg:nth-child(4) { animation-delay: 18s; background-image: url('https://i.imgur.com/DvK1TEW.png'); }
+        .hero-bg:nth-child(5) { animation-delay: 24s; background-image: url('https://i.imgur.com/RRQe1g0.png'); }
 
         @keyframes fadeZoom {
             0%   { opacity: 0; transform: scale(1.08); }
@@ -101,16 +102,13 @@
             text-shadow: 0 2px 8px rgba(0,0,0,0.7);
         }
 
-        /* === 新增價錢計劃樣式 === */
+        /* 價錢計劃 */
         .pricing {
             padding: 80px 20px;
             background: #fff;
             text-align: center;
         }
-        .pricing h2 {
-            font-size: 2.5em;
-            margin-bottom: 50px;
-        }
+        .pricing h2 { font-size: 2.5em; margin-bottom: 50px; }
         .plans {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -126,19 +124,11 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.08);
             transition: all 0.3s;
         }
-        .plan-card:hover {
-            transform: translateY(-10px);
-            border-color: #e74c3c;
-        }
+        .plan-card:hover { transform: translateY(-10px); border-color: #e74c3c; }
         .plan-card.popular {
             border-color: #e74c3c;
             transform: scale(1.05);
             box-shadow: 0 15px 35px rgba(231, 76, 60, 0.15);
-        }
-        .plan-card h3 {
-            font-size: 1.6em;
-            margin: 0 0 10px 0;
-            color: #111;
         }
         .price {
             font-size: 2.8em;
@@ -146,16 +136,10 @@
             color: #e74c3c;
             margin: 15px 0;
         }
-        .plan-card ul {
-            text-align: left;
-            padding-left: 20px;
-            margin: 25px 0;
-        }
-        .plan-card li {
-            margin: 12px 0;
-            font-size: 1.05em;
-        }
-        .btn {
+        .plan-card ul { text-align: left; padding-left: 20px; margin: 25px 0; }
+        .plan-card li { margin: 12px 0; font-size: 1.05em; }
+
+        .btn { 
             display: inline-block;
             background: #e74c3c;
             color: white;
@@ -188,7 +172,7 @@
             <img src="https://i.imgur.com/wMo4cF4.jpeg" alt="EverEver Photbooth Logo" class="logo">
         </div>
         <div class="header-text">
-            <h1>EverEver Photobooth</h1>
+            <h1>EverEver Photbooth</h1>
             <p>Say Cheese!｜Snap Forever!</p>
         </div>
     </header>
@@ -201,18 +185,17 @@
         <div class="hero-bg"></div>
 
         <div class="hero-content">
-            <h1>Photobooth專業攝影服務</h1>
+            <h1>Photbooth專業攝影服務</h1>
             <p>婚禮・家庭・活動・商業攝影</p>
             <a href="https://wa.me/85297819271?text=你好，我想查詢EverEver%20Photbooth%20攝影服務" 
                class="btn" target="_blank">立即查詢</a>
         </div>
     </div>
 
-    <!-- === 新增價錢計劃部分 === -->
+    <!-- 價錢計劃 -->
     <section class="pricing">
         <h2>我們的套餐計劃</h2>
         <div class="plans">
-            <!-- 基本套餐 -->
             <div class="plan-card">
                 <h3>基本拍攝套餐</h3>
                 <div class="price">$2,980</div>
@@ -227,7 +210,6 @@
                 <a href="https://wa.me/85297819271?text=你好，我想查詢基本拍攝套餐" class="btn">選擇此套餐</a>
             </div>
 
-            <!-- 最受歡迎套餐 -->
             <div class="plan-card popular">
                 <h3>最受歡迎套餐 ★</h3>
                 <div class="price">$4,280</div>
@@ -243,7 +225,6 @@
                 <a href="https://wa.me/85297819271?text=你好，我想查詢最受歡迎套餐" class="btn">選擇此套餐</a>
             </div>
 
-            <!-- 豪華套餐 -->
             <div class="plan-card">
                 <h3>豪華拍攝套餐</h3>
                 <div class="price">$6,280</div>
@@ -278,8 +259,7 @@
         <p style="font-size:1.2em;">WhatsApp / 電話：852 9781 9271<br>
         電郵：evereverphotobooth@gmail.com</p>
         <a href="https://wa.me/85297819271?text=你好，我想查詢攝影服務" 
-           class="btn whatsapp" 
-           target="_blank">立即 WhatsApp 查詢</a>
+           class="btn whatsapp" target="_blank">立即 WhatsApp 查詢</a>
     </section>
 
     <footer>
