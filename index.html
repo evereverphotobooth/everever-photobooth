@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EverEver Photobooth | 香港專業攝影服務</title>
+    
+    <link rel="icon" type="image/jpeg" href="https://i.imgur.com/wMo4cF4.jpeg">
+
     <style>
         body { 
             font-family: "Microsoft YaHei", Arial, sans-serif; 
@@ -13,23 +16,30 @@
             line-height:1.6; 
         }
 
+        /* ==================== 頂部 Header (已修改為橫向排列) ==================== */
         header { 
             background:#111; 
             color:white; 
-            padding:25px 20px; 
-            text-align: center;
+            padding:20px 20px; 
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            gap: 15px; /* 圖示和文字之間的距離 */
         }
         .logo-container {
             display: flex;
-            justify-content: center;
-            margin-bottom: 10px;
+            align-items: center;
         }
         .logo {
-            height: 85px;
+            height: 55px; /* 縮小圖示以配合橫向排版 */
             width: auto;
+            border-radius: 50%; /* 讓圖片變成圓形，更符合你的截圖風格 */
+        }
+        .header-text {
+            text-align: left; /* 文字靠左對齊圖示 */
         }
         .header-text h1 {
-            margin: 10px 0 5px 0;
+            margin: 0;
             font-size: 2.2em;
         }
         .header-text p {
@@ -38,6 +48,7 @@
             opacity: 0.9;
         }
 
+        /* ==================== Hero 區塊 ==================== */
         .hero {
             height: 85vh;
             position: relative;
@@ -130,7 +141,7 @@
             line-height: 1.75;
         }
 
-        /* 其他部分 */
+        /* ==================== 價錢計劃 ==================== */
         .pricing { padding: 80px 20px; background: #f9f9f9; text-align: center; }
         .pricing h2 { font-size: 2.5em; margin-bottom: 50px; }
         .plans {
@@ -169,6 +180,7 @@
         }
         .whatsapp { background: #25D366; }
 
+        /* ==================== 作品展示 ==================== */
         .portfolio { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:25px; }
         .portfolio img { 
             width:100%; 
@@ -179,6 +191,7 @@
         }
         .portfolio img:hover { transform:scale(1.04); }
 
+        /* ==================== 頁尾 ==================== */
         footer { background:#111; color:white; text-align:center; padding:60px 20px; }
     </style>
 </head>
@@ -186,10 +199,10 @@
 
     <header>
         <div class="logo-container">
-            <img src="https://i.imgur.com/wMo4cF4.jpeg" alt="EverEver Photbooth Logo" class="logo">
+            <img src="https://i.imgur.com/wMo4cF4.jpeg" alt="EverEver Photobooth Logo" class="logo">
         </div>
         <div class="header-text">
-            <h1>EverEver Photbooth</h1>
+            <h1>EverEver Photobooth</h1>
             <p>Say Cheese!｜Snap Forever!</p>
         </div>
     </header>
@@ -202,58 +215,49 @@
         <div class="hero-bg"></div>
 
         <div class="hero-content">
-            <h1>Photbooth專業攝影服務</h1>
+            <h1>Photobooth專業攝影服務</h1>
             <p>婚禮・家庭・活動・商業攝影</p>
-            <a href="https://wa.me/85297819271?text=你好，我想查詢EverEver%20Photbooth%20攝影服務" 
+            <a href="https://wa.me/85297819271?text=你好，我想查詢EverEver%20Photobooth%20攝影服務" 
                class="btn" target="_blank">立即查詢</a>
         </div>
     </div>
 
-    <!-- Photo Booth 功能介紹（只顯示你想出現嘅功能） -->
     <section class="features">
         <h2>我們的 Photo Booth 功能</h2>
         <div class="feature-grid">
-
             <div class="feature-item">
                 <div class="feature-icon">⭐</div>
                 <h3>卓越品質</h3>
                 <p>我們使用專業的單反數碼相機和影樓級燈光設備，以保證每一張照片都展現高品質和專業水準。</p>
             </div>
-
             <div class="feature-item">
                 <div class="feature-icon">🚀</div>
                 <h3>特快印刷</h3>
                 <p>我們使用商用級熱昇華相片打印機，能在短短14秒內打印出一張4R照片，讓您和您的來賓立刻擁有精美的照片回憶。</p>
             </div>
-
             <div class="feature-item">
                 <div class="feature-icon">🎩</div>
                 <h3>免費提供多樣道具</h3>
                 <p>我們提供各式道具供貴客使用，亦可根據客戶需求度身訂製道具，讓每張照片充滿趣味和獨特風采。</p>
             </div>
-
             <div class="feature-item">
                 <div class="feature-icon">📱</div>
                 <h3>即時 QR Code 收相</h3>
                 <p>我們的 Photobooth 能即時以 QR Code 收相，讓貴客能立即收取相片，並隨時在社交媒體分享美好時刻。</p>
             </div>
-
             <div class="feature-item">
                 <div class="feature-icon">🎨</div>
                 <h3>客製化服務</h3>
                 <p>我們能根據客戶需求，量身訂造相紙模板、機身包裝甚至是使用介面，確保每個活動都展現獨特的風格和形象。</p>
             </div>
-
             <div class="feature-item">
                 <div class="feature-icon">👥</div>
                 <h3>駐場工作人員</h3>
                 <p>所有服務均有工作人員駐場協助，確保服務運作暢順。</p>
             </div>
-
         </div>
     </section>
 
-    <!-- 價錢計劃 -->
     <section class="pricing">
         <h2>我們的套餐計劃</h2>
         <div class="plans">
@@ -270,7 +274,6 @@
                 </ul>
                 <a href="https://wa.me/85297819271?text=你好，我想查詢基本拍攝套餐" class="btn">選擇此套餐</a>
             </div>
-
             <div class="plan-card popular">
                 <h3>最受歡迎套餐 ★</h3>
                 <div class="price">$4,280</div>
@@ -285,7 +288,6 @@
                 </ul>
                 <a href="https://wa.me/85297819271?text=你好，我想查詢最受歡迎套餐" class="btn">選擇此套餐</a>
             </div>
-
             <div class="plan-card">
                 <h3>豪華拍攝套餐</h3>
                 <div class="price">$6,280</div>
@@ -324,7 +326,7 @@
     </section>
 
     <footer>
-        <p>© 2026 EverEver Photbooth | 香港本地專業攝影服務 | All Rights Reserved</p>
+        <p>© 2026 EverEver Photobooth | 香港本地專業攝影服務 | All Rights Reserved</p>
     </footer>
 
 </body>
