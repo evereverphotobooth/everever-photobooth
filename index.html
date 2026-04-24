@@ -246,7 +246,6 @@
         .portfolio-section .section-title { color: white; }
         .portfolio-section .section-subtitle { color: #aaa; margin-bottom: 40px; }
         
-        /* 建立網格，讓輪播圖並排 */
         .portfolios-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -279,36 +278,32 @@
             overflow: hidden;
             position: relative;
             border-radius: 12px;
-            /* 允許觸控滑動 */
             touch-action: pan-y pinch-zoom;
         }
 
         .portfolio-track {
             display: flex;
-            transition: transform 0.3s ease-out; /* 稍微加快一點，感覺更順暢 */
+            transition: transform 0.3s ease-out; 
             will-change: transform;
         }
 
         .portfolio-item {
             min-width: 100%;
             box-sizing: border-box;
-            /* 移除原本的 padding，讓圖片填滿 */
         }
 
         .portfolio-item img { 
             width: 100%; 
-            height: 300px; /* 統一高度 */
+            height: 300px; 
             object-fit: cover; 
-            display: block; /* 移除圖片底部的空隙 */
-            pointer-events: none; /* 防止圖片被拖拽出影象 */
+            display: block; 
+            pointer-events: none; 
         }
 
-        /* 隱藏箭頭，主要依賴滑動 */
         .carousel-btn {
             display: none; 
         }
 
-        /* 輪播指示點 */
         .carousel-dots {
             display: flex;
             justify-content: center;
@@ -367,32 +362,32 @@
             <div class="feature-item">
                 <div class="feature-icon">⭐</div>
                 <h3>影樓級專業畫質</h3>
-                <p>放棄模糊不清！我們採用頂級單反相機配合專業影樓燈光，無懼昏暗環境，確保每位賓客上鏡都明亮細緻。</p>
+                <p>配備專業級單反相機與精準控光設備，以影樓級數捕捉每一個動人細節，確保每位賓客上鏡都明亮細緻。</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon">🚀</div>
-                <h3>14 秒極速印相</h3>
-                <p>快樂無需等待！商用級熱昇華打印技術，只需 14 秒即可印出防水防指紋的實體照片，讓賓客即時將回憶帶回家。</p>
+                <h3>12秒極速印刷</h3>
+                <p>採用商用相片打印技術，12秒內快速輸出高色彩還原度、防脫色、防水、防指紋的實體照片，為賓客留下永恆紀念。</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon">🎩</div>
                 <h3>玩味無限打卡道具</h3>
-                <p>提供多款趣味道具任你揀！我們亦可配合活動主題度身訂造專屬道具，瞬間打破隔膜，令全場氣氛升溫。</p>
+                <p>我們提供質感優良的拍攝道具，亦可配合活動主題度身訂造專屬道具，務求完美契合您的品牌調性或婚禮主題。</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon">📱</div>
-                <h3>即影即 Share</h3>
-                <p>專屬 QR Code 即時掃描下載高清電子檔。無縫連接社交平台，讓賓客秒速將歡樂時光上傳分享！</p>
+                <h3>數碼化即時存取</h3>
+                <p>專屬 QR Code，即時掃描下載高清電子檔，無縫連接社交平台，結合實體與數碼體驗。</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon">🎨</div>
                 <h3>100% 專屬客製化</h3>
-                <p>你的活動，由你作主。由相框排版、使用介面到機身包裝設計，我們都能為你度身訂造，完美融入品牌與場地形象。</p>
+                <p>從相紙邊框設計、螢幕互動介面至機身外觀，我們都能為你度身訂造，完美融入場地佈置與品牌形象。</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon">👥</div>
-                <h3>貼心駐場氣氛專員</h3>
-                <p>全程由經驗豐富的工作人員從旁協助，負責指引及帶動氣氛。你只需負責展現笑容，剩下的交給我們！</p>
+                <h3>專業駐場團隊</h3>
+                <p>全程由經驗豐富的工作人員從旁協助，負責打燈、遞道具及帶動氣氛，確保設備運作完美無瑕。</p>
             </div>
         </div>
     </section>
