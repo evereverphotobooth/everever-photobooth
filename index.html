@@ -14,6 +14,7 @@
             background:#f8f8f8; 
             color:#333; 
             line-height:1.6; 
+            overflow-x: hidden;
         }
 
         /* ==================== 頂部 Header ==================== */
@@ -81,6 +82,7 @@
         .hero-bg:nth-child(3) { animation-delay: 12s; background-image: url('https://i.imgur.com/zdTnvEK.png'); }
         .hero-bg:nth-child(4) { animation-delay: 18s; background-image: url('https://i.imgur.com/DvK1TEW.png'); }
         .hero-bg:nth-child(5) { animation-delay: 24s; background-image: url('https://i.imgur.com/RRQe1g0.png'); }
+
         @keyframes fadeZoom {
             0%   { opacity: 0; transform: scale(1.08); }
             10%  { opacity: 1; transform: scale(1.08); }
@@ -106,15 +108,25 @@
             text-shadow: 0 2px 8px rgba(0,0,0,0.7);
         }
 
+        /* ==================== 標題共用樣式 ==================== */
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #222;
+        }
+        .section-subtitle {
+            text-align: center;
+            max-width: 600px;
+            margin: -35px auto 50px auto;
+            color: #666;
+            font-size: 1.1em;
+        }
+
         /* ==================== Photo Booth 功能介紹 ==================== */
         .features {
             padding: 80px 20px;
             background: #fff;
-            text-align: center;
-        }
-        .features h2 {
-            font-size: 2.5em;
-            margin-bottom: 60px;
         }
         .feature-grid {
             display: grid;
@@ -142,9 +154,7 @@
 
         /* ==================== 價錢計劃 ==================== */
         .pricing { padding: 80px 20px; background: #f9f9f9; text-align: center; }
-        .pricing h2 { font-size: 2.5em; margin-bottom: 50px; }
         .plans {
-            /* 調整為雙欄網格設計 */
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 30px;
@@ -164,7 +174,6 @@
         .plan-card:hover { 
             transform: translateY(-5px); 
         }
-        /* 讓有原價的空間跟沒有原價的保持一致 */
         .price-container {
             min-height: 90px;
         }
@@ -186,7 +195,7 @@
             display: inline-block;
             font-size: 1.05em;
             color: #444;
-            flex-grow: 1; /* 讓清單自動撐開空間，對齊底部按鈕 */
+            flex-grow: 1;
         }
         .plan-card li {
             margin-bottom: 10px;
@@ -212,6 +221,7 @@
             font-size: 0.95em;
         }
 
+        /* ==================== 按鈕共用樣式 ==================== */
         .btn { 
             display: inline-block;
             background: #e74c3c;
@@ -221,25 +231,104 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1em;
-            margin-top: auto; /* 將按鈕推到最底部 */
+            margin-top: auto;
             width: 80%;
             align-self: center;
         }
         .whatsapp { background: #25D366; width: auto; }
 
-        /* ==================== 作品展示 ==================== */
-        .portfolio { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:25px; }
-        .portfolio img { 
-            width:100%; 
-            height:300px; 
-            object-fit:cover; 
-            border-radius:12px; 
-            transition:0.4s; 
+        /* ==================== 作品展示 (相片輪播圖) ==================== */
+        .portfolio-section {
+            background: #111; 
+            color: white;
+            padding: 80px 20px;
+            position: relative;
         }
-        .portfolio img:hover { transform:scale(1.04); }
+        .portfolio-section .section-title { color: white; }
+        .portfolio-section .section-subtitle { color: #aaa; margin-bottom: 40px; }
+        
+        .portfolio-carousel-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .portfolio-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .portfolio-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 0 15px;
+        }
+
+        .portfolio-item img { 
+            width: 100%; 
+            height: 550px; 
+            object-fit: cover; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* 輪播控制按鈕 */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5em;
+            color: #111;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+        .carousel-btn:hover {
+            background: #e74c3c;
+            color: white;
+        }
+        .prev-btn { left: 15px; }
+        .next-btn { right: 15px; }
+
+        /* 輪播指示點 */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 12px;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: #555;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .dot.active {
+            background: #e74c3c;
+        }
+
+        /* 手機版調整 */
+        @media (max-width: 768px) {
+            .portfolio-item { padding: 0; }
+            .portfolio-item img { height: 350px; border-radius: 8px;}
+            .carousel-btn { display: none; }
+        }
 
         /* ==================== 頁尾 ==================== */
-        footer { background:#111; color:white; text-align:center; padding:60px 20px; }
+        #contact {text-align:center; background:#111; color:white; padding-bottom: 60px;}
+        footer { background:#0a0a0a; color:#888; text-align:center; padding:30px 20px; font-size: 0.9em;}
     </style>
 </head>
 <body>
@@ -270,45 +359,45 @@
     </div>
 
     <section class="features">
-        <h2>為甚麼選擇 EverEver Photobooth？</h2>
-        <p style="text-align:center; max-width:600px; margin:-40px auto 50px auto; color:#666;">追求極致細節，為您的重要時刻留下高質感的完美印記。</p>
+        <h2 class="section-title">為甚麼選擇 EverEver Photobooth？</h2>
+        <p class="section-subtitle">不只是一張照片，我們致力為你和賓客打造最歡樂、最難忘的互動體驗。</p>
         
         <div class="feature-grid">
             <div class="feature-item">
                 <div class="feature-icon">⭐</div>
-                <h3>極致影像呈現</h3>
-                <p>配備專業級單反相機與精準控光設備，以影樓級數捕捉每一個動人細節，呈現最高水準的攝影藝術。</p>
+                <h3>影樓級專業畫質</h3>
+                <p>放棄模糊不清！我們採用頂級單反相機配合專業影樓燈光，無懼昏暗環境，確保每位賓客上鏡都明亮細緻。</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon">🚀</div>
-                <h3>高效熱昇華打印</h3>
-                <p>採用商用相片打印技術，14秒內快速輸出高色彩還原度、防脫色的實體照片，為賓客留下永恆紀念。</p>
+                <h3>14 秒極速印相</h3>
+                <p>快樂無需等待！商用級熱昇華打印技術，只需 14 秒即可印出防水防指紋的實體照片，讓賓客即時將回憶帶回家。</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon">🎩</div>
-                <h3>精緻主題道具</h3>
-                <p>摒棄俗套，我們提供質感優良的拍攝道具，並支援客製化製作，完美契合您的品牌調性或婚禮主題。</p>
+                <h3>玩味無限打卡道具</h3>
+                <p>提供多款趣味道具任你揀！我們亦可配合活動主題度身訂造專屬道具，瞬間打破隔膜，令全場氣氛升溫。</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon">📱</div>
-                <h3>數碼化即時存取</h3>
-                <p>結合實體與數碼體驗，系統自動生成相片專屬 QR Code，賓客一掃即可獲取原畫質電子檔案。</p>
+                <h3>即影即 Share</h3>
+                <p>專屬 QR Code 即時掃描下載高清電子檔。無縫連接社交平台，讓賓客秒速將歡樂時光上傳分享！</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon">🎨</div>
-                <h3>全方位視覺定制</h3>
-                <p>從相紙邊框設計、螢幕互動介面至機身外觀，均可根據您的品牌識別 (CI) 或婚禮視覺進行深度定制。</p>
+                <h3>100% 專屬客製化</h3>
+                <p>你的活動，由你作主。由相框排版、使用介面到機身包裝設計，我們都能為你度身訂造，完美融入品牌與場地形象。</p>
             </div>
             <div class="feature-item">
                 <div class="feature-icon">👥</div>
-                <h3>專業駐場團隊</h3>
-                <p>每場服務均配置受過專業訓練的現場人員，確保設備運作完美無瑕，提供尊貴流暢的賓客體驗。</p>
+                <h3>貼心駐場氣氛專員</h3>
+                <p>全程由經驗豐富的工作人員從旁協助，負責指引及帶動氣氛。你只需負責展現笑容，剩下的交給我們！</p>
             </div>
         </div>
     </section>
 
     <section class="pricing">
-        <h2>精選套餐</h2>
+        <h2 class="section-title">精選套餐</h2>
         <div class="plans">
             
             <div class="plan-card">
@@ -372,18 +461,43 @@
         <p style="margin-top:40px; color:#666;">* 歡迎隨時向我們查詢檔期及其他自訂要求。</p>
     </section>
 
-    <section id="portfolio" style="background:#111; color:white;">
-        <h2>作品展示</h2>
-        <div class="portfolio">
-            <img src="https://via.placeholder.com/600x400/333/fff?text=婚禮跟拍" alt="婚禮">
-            <img src="https://via.placeholder.com/600x400/333/fff?text=商業產品照" alt="商業">
-            <img src="https://via.placeholder.com/600x400/333/fff?text=活動攝影" alt="活動">
+    <section id="portfolio" class="portfolio-section">
+        <h2 class="section-title">作品展示</h2>
+        <p class="section-subtitle">點擊箭頭或左右滑動，瀏覽我們精選的婚禮跟拍紀錄</p>
+
+        <div class="portfolio-carousel-container" id="portfolioCarousel">
+            
+            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+
+            <div class="portfolio-track" id="carouselTrack">
+                
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/1000x600/333/fff?text=請換成第1張婚禮相片.jpg" alt="EverEver Photobooth 婚禮相片 1">
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/1000x600/333/fff?text=請換成第2張婚禮相片.jpg" alt="EverEver Photobooth 婚禮相片 2">
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/1000x600/333/fff?text=請換成第3張婚禮相片.jpg" alt="EverEver Photobooth 婚禮相片 3">
+                </div>
+
+            </div>
+
+            <div class="carousel-dots" id="carouselDots">
+                <div class="dot active" onclick="currentSlide(0)"></div>
+                <div class="dot" onclick="currentSlide(1)"></div>
+                <div class="dot" onclick="currentSlide(2)"></div>
+            </div>
+
         </div>
     </section>
 
-    <section id="contact" style="text-align:center; background:#111; color:white;">
-        <h2 style="color:white;">準備好捕捉屬於你的美好時刻？</h2>
-        <p style="font-size:1.2em;">WhatsApp / 電話：852 9781 9271<br>
+    <section id="contact">
+        <h2 style="color:white; margin-bottom: 20px;">準備好捕捉屬於你的美好時刻？</h2>
+        <p style="font-size:1.2em; margin-bottom: 30px;">WhatsApp / 電話：852 9781 9271<br>
         電郵：evereverphotobooth@gmail.com</p>
         <a href="https://wa.me/85297819271?text=你好，我想查詢攝影服務" 
            class="btn whatsapp" target="_blank">立即 WhatsApp 查詢</a>
@@ -392,6 +506,71 @@
     <footer>
         <p>© 2026 EverEver Photobooth | 香港本地專業攝影服務 | All Rights Reserved</p>
     </footer>
+
+    <script>
+        let slideIndex = 0;
+        const track = document.getElementById('carouselTrack');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = document.querySelectorAll('.portfolio-item').length;
+        let slideInterval;
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${slideIndex * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[slideIndex].classList.add('active');
+        }
+
+        function moveSlide(n) {
+            slideIndex += n;
+            if (slideIndex >= totalSlides) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = totalSlides - 1;
+            updateCarousel();
+            resetInterval();
+        }
+
+        function currentSlide(n) {
+            slideIndex = n;
+            updateCarousel();
+            resetInterval();
+        }
+
+        function startInterval() {
+            slideInterval = setInterval(() => {
+                moveSlide(1);
+            }, 4000);
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            startInterval();
+        }
+
+        let startX = 0;
+        let isDragging = false;
+        const carouselContainer = document.getElementById('portfolioCarousel');
+
+        carouselContainer.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+            clearInterval(slideInterval); 
+        }, {passive: true});
+
+        carouselContainer.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            let endX = e.changedTouches[0].clientX;
+            let diff = startX - endX;
+
+            if (diff > 50) {
+                moveSlide(1);
+            } else if (diff < -50) {
+                moveSlide(-1);
+            }
+            isDragging = false;
+            startInterval(); 
+        }, {passive: true});
+
+        startInterval();
+    </script>
 
 </body>
 </html>
