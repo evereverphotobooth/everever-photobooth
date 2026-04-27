@@ -29,17 +29,17 @@
 
         /* ==================== 頂部 Header & Navbar ==================== */
         header { 
-            background: rgba(17, 17, 17, 0.98); /* 稍微半透明，更有質感 */
+            background: rgba(17, 17, 17, 0.98); 
             color: white; 
             padding: 15px 30px; 
             display: flex;
             align-items: center; 
-            justify-content: space-between; /* Logo 喺左，選單喺右 */
-            position: sticky; /* 固定在頂部 */
+            justify-content: space-between; 
+            position: sticky; 
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            flex-wrap: wrap; /* 讓手機版自動換行 */
+            flex-wrap: wrap; 
         }
         
         .header-left {
@@ -79,10 +79,10 @@
             transition: color 0.3s;
         }
         nav a:hover {
-            color: #e74c3c; /* 滑鼠移過去變紅色 */
+            color: #e74c3c; 
         }
 
-        /* 手機版排版：Logo 同選單上下置中排 */
+        /* 手機版排版 */
         @media (max-width: 768px) {
             header {
                 justify-content: center;
@@ -408,8 +408,8 @@
         <div class="hero-content">
             <h1>Photobooth專業攝影服務</h1>
             <p>婚禮・家庭・活動・商業攝影</p>
-            <a href="#pricing" class="btn">查看收費套餐</a> <a href="https://wa.me/85297819271?text=你好，我想查詢EverEver%20Photobooth%20攝影服務" 
-               class="btn whatsapp" target="_blank" style="margin-left: 10px;">立即查詢</a>
+            <a href="https://wa.me/85297819271?text=你好，我想查詢EverEver%20Photobooth%20攝影服務" 
+               class="btn whatsapp" target="_blank">立即查詢</a>
         </div>
     </div>
 
@@ -566,7 +566,6 @@
     </footer>
 
     <script>
-        // 處理頁面上多個輪播圖的通用函數
         function initCarousels() {
             const carousels = document.querySelectorAll('.portfolio-carousel-container');
             
